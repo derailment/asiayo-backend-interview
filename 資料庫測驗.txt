@@ -1,0 +1,140 @@
+/* 題目一 */
+
+/* mysql -u root -p */
+
+create database `my_db`;
+use my_db;
+
+create table property(id integer NOT NULL AUTO_INCREMENT, name varchar(50), PRIMARY KEY(id));
+create table room(id integer NOT NULL AUTO_INCREMENT, property_id integer, name varchar(50), PRIMARY KEY(id));
+create table orders(id integer NOT NULL AUTO_INCREMENT, room_id integer, price integer, create_at datetime, PRIMARY KEY(id));
+
+insert into property(name) values("花蓮太魯閣晶英酒店");
+insert into property(name) values("苗栗尚順君樂飯店");
+insert into property(name) values("苗栗享沐莊園渡假酒店");
+insert into property(name) values("南投日月潭大飯店");
+insert into property(name) values("台中麗寶T12賽車主題旅店");
+insert into property(name) values("花蓮瑞穗天合國際觀光酒店");
+insert into property(name) values("宜蘭綠舞國際觀光飯店");
+insert into property(name) values("桃園名人堂花園大飯店");
+insert into property(name) values("花蓮秧悅美地度假酒店");
+insert into property(name) values("嘉義棒棒積木飯店");
+insert into property(name) values("美國佛羅里達法納邁阿密海灘酒店");
+insert into property(name) values("美國紐約廣場酒店");
+
+insert into room(property_id, name) values(1, "大");/*room_id 1*/
+insert into room(property_id, name) values(1, "中");/*room_id 2*/
+insert into room(property_id, name) values(1, "小");/*room_id 3*/
+insert into room(property_id, name) values(2, "大");/*room_id 4*/
+insert into room(property_id, name) values(2, "中");/*room_id 5*/
+insert into room(property_id, name) values(2, "小");/*room_id 6*/
+insert into room(property_id, name) values(3, "大");/*room_id 7*/
+insert into room(property_id, name) values(3, "中");/*room_id 8*/
+insert into room(property_id, name) values(3, "小");/*room_id 9*/
+insert into room(property_id, name) values(4, "大");/*room_id 10*/
+insert into room(property_id, name) values(4, "中");/*room_id 11*/
+insert into room(property_id, name) values(4, "小");/*room_id 12*/
+insert into room(property_id, name) values(5, "大");/*room_id 13*/
+insert into room(property_id, name) values(5, "中");/*room_id 14*/
+insert into room(property_id, name) values(5, "小");/*room_id 15*/
+insert into room(property_id, name) values(6, "大");/*room_id 16*/
+insert into room(property_id, name) values(6, "大");/*room_id 17*/
+insert into room(property_id, name) values(6, "大");/*room_id 18*/
+insert into room(property_id, name) values(7, "大");/*room_id 19*/
+insert into room(property_id, name) values(7, "中");/*room_id 20*/
+insert into room(property_id, name) values(7, "中");/*room_id 21*/
+insert into room(property_id, name) values(8, "小");/*room_id 22*/
+insert into room(property_id, name) values(8, "中");/*room_id 23*/
+insert into room(property_id, name) values(8, "大");/*room_id 24*/
+insert into room(property_id, name) values(9, "中");/*room_id 25*/
+insert into room(property_id, name) values(9, "中");/*room_id 26*/
+insert into room(property_id, name) values(9, "中");/*room_id 27*/
+insert into room(property_id, name) values(10, "中");/*room_id 28*/
+insert into room(property_id, name) values(10, "小");/*room_id 29*/
+insert into room(property_id, name) values(10, "中");/*room_id 30*/
+insert into room(property_id, name) values(11, "大");/*room_id 31*/
+insert into room(property_id, name) values(11, "中");/*room_id 32*/
+insert into room(property_id, name) values(12, "大");/*room_id 33*/
+insert into room(property_id, name) values(12, "中");/*room_id 34*/
+
+
+insert into orders(room_id, price, create_at) values(1, 1000, now());
+insert into orders(room_id, price, create_at) values(2, 1000, now());
+insert into orders(room_id, price, create_at) values(3, 1000, now());
+insert into orders(room_id, price, create_at) values(4, 1000, now());
+insert into orders(room_id, price, create_at) values(5, 1000, now());
+insert into orders(room_id, price, create_at) values(6, 1000, now());
+insert into orders(room_id, price, create_at) values(7, 1000, now());
+insert into orders(room_id, price, create_at) values(8, 1000, now());
+insert into orders(room_id, price, create_at) values(9, 1000, now());
+insert into orders(room_id, price, create_at) values(10, 1000, now());
+insert into orders(room_id, price, create_at) values(11, 1000, now());
+insert into orders(room_id, price, create_at) values(12, 1000, now());
+insert into orders(room_id, price, create_at) values(13, 1000, now());
+insert into orders(room_id, price, create_at) values(14, 1000, now());
+insert into orders(room_id, price, create_at) values(15, 1000, now());
+insert into orders(room_id, price, create_at) values(16, 1000, now());
+insert into orders(room_id, price, create_at) values(17, 1000, now());
+insert into orders(room_id, price, create_at) values(18, 1000, now());
+insert into orders(room_id, price, create_at) values(19, 1000, now());
+insert into orders(room_id, price, create_at) values(20, 1000, now());
+insert into orders(room_id, price, create_at) values(21, 1000, now());
+insert into orders(room_id, price, create_at) values(22, 1000, now());
+insert into orders(room_id, price, create_at) values(23, 1000, now());
+insert into orders(room_id, price, create_at) values(24, 1000, now());
+insert into orders(room_id, price, create_at) values(25, 1000, now());
+insert into orders(room_id, price, create_at) values(26, 1000, now());
+insert into orders(room_id, price, create_at) values(27, 1000, now());
+insert into orders(room_id, price, create_at) values(28, 1000, now());
+insert into orders(room_id, price, create_at) values(29, 1000, now());
+insert into orders(room_id, price, create_at) values(30, 1000, now());
+insert into orders(room_id, price, create_at) values(31, 1000, now());
+insert into orders(room_id, price, create_at) values(32, 1000, now());
+insert into orders(room_id, price, create_at) values(33, 1000, now());
+insert into orders(room_id, price, create_at) values(34, 1000, now());
+insert into orders(room_id, price, create_at) values(1, 1000, now());
+insert into orders(room_id, price, create_at) values(2, 1000, now());
+insert into orders(room_id, price, create_at) values(3, 1000, now());
+insert into orders(room_id, price, create_at) values(4, 1000, now());
+insert into orders(room_id, price, create_at) values(5, 1000, now());
+insert into orders(room_id, price, create_at) values(6, 1000, now());
+insert into orders(room_id, price, create_at) values(7, 1000, now());
+insert into orders(room_id, price, create_at) values(8, 1000, now());
+insert into orders(room_id, price, create_at) values(9, 1000, now());
+insert into orders(room_id, price, create_at) values(10, 1000, now());
+insert into orders(room_id, price, create_at) values(11, 1000, now());
+insert into orders(room_id, price, create_at) values(12, 1000, now());
+insert into orders(room_id, price, create_at) values(13, 1000, now());
+insert into orders(room_id, price, create_at) values(14, 1000, now());
+insert into orders(room_id, price, create_at) values(15, 1000, now());
+insert into orders(room_id, price, create_at) values(16, 1000, now());
+insert into orders(room_id, price, create_at) values(17, 1000, now());
+insert into orders(room_id, price, create_at) values(18, 1000, now());
+insert into orders(room_id, price, create_at) values(19, 1000, now());
+insert into orders(room_id, price, create_at) values(20, 1000, now());
+insert into orders(room_id, price, create_at) values(21, 1000, now());
+insert into orders(room_id, price, create_at) values(22, 1000, now());
+insert into orders(room_id, price, create_at) values(23, 1000, now());
+insert into orders(room_id, price, create_at) values(24, 1000, now());
+insert into orders(room_id, price, create_at) values(25, 1000, now());
+insert into orders(room_id, price, create_at) values(26, 1000, now());
+insert into orders(room_id, price, create_at) values(27, 1000, now());
+insert into orders(room_id, price, create_at) values(28, 1000, now());
+insert into orders(room_id, price, create_at) values(29, 1000, now());
+insert into orders(room_id, price, create_at) values(30, 1000, now());
+
+select count(orders.id) as NumberOfOrders, property.name as PropertyName
+from orders
+left join room on orders.room_id = room.id
+left join property on room.property_id = property.id
+group by PropertyName
+order by NumberOfOrders desc
+limit 10;
+
+/* 題目二 */
+/*
+我會試著對table做index，要試試看做在哪些field才會增進效能。
+*/
+
+
+
