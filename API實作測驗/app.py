@@ -56,23 +56,48 @@ def exchange_currency():
         result = amount * currencies['USD']['JPY']
     if source == 'USD' and target == 'USD':
         result = amount * currencies['USD']['USD']
-    if source == 'USD' and target == 'JPY':
-        result = amount * currencies['USD']['JPY']
+    if source == 'USD' and target == 'TWD':
+        result = amount * currencies['USD']['TWD']
     if source == 'JPY' and target == 'JPY':
         result = amount * currencies['JPY']['JPY']
     if source == 'JPY' and target == 'USD':
         result = amount * currencies['JPY']['USD']
     if source == 'JPY' and target == 'TWD':
         result = amount * currencies['JPY']['TWD']
-
-    return jsonify({'result': source + " " + str(amount) + ' to ' + target + ' is ' + format_result(result) }), 200
-      
+    
+    return jsonify({'result': format_result(result) }), 200
     
 def format_amount(amount):
     return "{:.2f}".format(amount)
 
 def format_result(result):
-    return str(result)
+    result = round(result, 2)
+    result = "{:.2f}".format(result)
+    before_point = result.split('.')[0]
+    after_point = result.split('.')[1]    
+    stop_position = 0
+    
+    if len(before_point) - 1 < 3:
+        return result
+
+    i = len(before_point)-1
+    segment = ""
+
+    while True:
+        if i >2:     
+          segment = ',' + before_point[i-2:i+1] + segment
+        if i == 2:
+          segment = before_point[i-2:i+1] + segment
+        if i - 3 <= 0:
+            if i >= 2:
+                stop_position = i - 2
+            else:
+                stop_position = i + 1
+            break
+        i -= 3
+        
+    result = before_point[0:stop_position] + segment + '.' + after_point
+    return result
 
 
 if __name__ == '__main__':
